@@ -9,15 +9,16 @@ errors when building 32-bit openSBI don't specify mabi or march.
 
 Upstream-Status: Inappropriate [Fixes a 32-bit Yocto flow bug]
 Signed-off-by: Alistair Francis <alistair.francis@wdc.com>
+Signed-off-by: sungwon.pino <sungwon.pino@gmail.com>
 ---
  Makefile | 2 --
  1 file changed, 2 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index ae68f55..10851fc 100644
+index 78c28c0..275feb1 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -145,7 +145,6 @@ GENFLAGS	+=	$(firmware-genflags-y)
+@@ -158,7 +158,6 @@ GENFLAGS    +=      $(firmware-genflags-y)
  CFLAGS		=	-g -Wall -Werror -nostdlib -fno-strict-aliasing -O2
  CFLAGS		+=	-fno-omit-frame-pointer -fno-optimize-sibling-calls
  CFLAGS		+=	-mno-save-restore -mstrict-align
@@ -25,7 +26,7 @@ index ae68f55..10851fc 100644
  CFLAGS		+=	-mcmodel=$(PLATFORM_RISCV_CODE_MODEL)
  CFLAGS		+=	$(GENFLAGS)
  CFLAGS		+=	$(platform-cflags-y)
-@@ -158,7 +157,6 @@ CPPFLAGS	+=	$(firmware-cppflags-y)
+@@ -172,7 +171,6 @@ CPPFLAGS	+=	$(firmware-cppflags-y)
  ASFLAGS		=	-g -Wall -nostdlib -D__ASSEMBLY__
  ASFLAGS		+=	-fno-omit-frame-pointer -fno-optimize-sibling-calls
  ASFLAGS		+=	-mno-save-restore -mstrict-align
